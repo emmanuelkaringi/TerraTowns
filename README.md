@@ -68,3 +68,22 @@ Initially, the Terraform CLI couldn't install automatically on Gitpod without th
     We need to be careful when using the Init because it will not rerun if we restart an existing workspace.
 
     https://www.gitpod.io/docs/configure/workspaces/tasks
+
+## Working with Environment Variables (ENV)
+- List all enverionment variables - `env`
+- To view or filter ENV variables - `env | grep GITPOD`
+- To print out a specific environment variable - `echo $NAME_OF_VARIABLE`
+- To set an environment varible:
+    1. Within a bash script - `VARIBLE_NAME='content'`
+    2. In the terminal - `export VARIBLE_NAME='content'`
+- To set an environment variable temporarily when running a command - `HELLO='world' ./bin/print_message`
+- To unset an environment variable - `unset VARIABLE_NAME`
+- Scoping of Env Vars - When you open up new bash terminals in VSCode it will not be aware of env vars that you have set in another window.
+    If you want to Env Vars to persist across all future bash terminals that are open you need to set env vars in your bash profile. eg. `.bash_profile`
+- Persisting Env Vars in Gitpod - We can persist env vars into gitpod by storing them in Gitpod Secrets Storage.
+
+    `gp env HELLO='world'`
+
+    All future workspaces launched will set the env vars for all bash terminals opened in thoes workspaces.
+
+    You can also set env vars in the .gitpod.yml but this can only contain non-senstive env vars.
