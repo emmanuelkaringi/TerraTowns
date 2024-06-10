@@ -9,7 +9,9 @@
 # Version: 1.0
 ####################
 
-cd /workspace
+#PROJECT_ROOT='/workspace/TerraTowns' Set an environment varible but since I used `gp env`, this is not needed.
+
+cd /workspace #Used to avoid installing in the project folder.
 
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
 
