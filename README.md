@@ -87,3 +87,22 @@ Initially, the Terraform CLI couldn't install automatically on Gitpod without th
     All future workspaces launched will set the env vars for all bash terminals opened in thoes workspaces.
 
     You can also set env vars in the .gitpod.yml but this can only contain non-senstive env vars.
+
+## AWS CLI Installation
+I wrote a bash script to install AWS CLI that can be found at `/bin/install_aws_cli.sh`.
+
+[AWS CLI install and update instructions](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+[Environment variables to configure the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+### Setup AWS Env Vars
+- On local machine, run: `aws configure`
+- In a cloud environment like Gitpod, **set env vars**.
+
+Example:
+```sh
+gp env AWS_ACCESS_KEY_ID='AKI*******'
+gp env AWS_SECRET_ACCESS_KEY='wJal****************'
+gp env AWS_DEFAULT_REGION='us-****'
+```
+- Check if AWS credentials are configured correctly: `aws sts get-caller-identity`
