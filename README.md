@@ -190,3 +190,9 @@ Provide the following code (replace your token in the file):
   }
 }
 ```
+
+### Automate Terraform login
+- Created a script file to automate the Terraform login in Gitpod. The file is located at `bin/generate_tfrc_credentials.sh`
+- Generate a token via the link provided earlier.
+- Create an env var to store the token `gp env TERRAFORM_CLOUD_TOKEN='token here'`
+- Terraform login works without issues on the local machine.
