@@ -196,3 +196,7 @@ Provide the following code (replace your token in the file):
 - Generate a token via the link provided earlier.
 - Create an env var to store the token `gp env TERRAFORM_CLOUD_TOKEN='token here'`
 - Terraform login works without issues on the local machine.
+
+## Set up Alias for Terraform
+The goal here is to shorten `terraform` to `tf` when running the `terraform` command in the terminal.
+- Created a bash script to set the Alias at `bin/set_tf_alias.sh`
