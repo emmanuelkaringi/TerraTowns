@@ -84,7 +84,7 @@ Initially, the Terraform CLI couldn't install automatically on Gitpod without th
 
     `gp env HELLO='world'`
 
-    All future workspaces launched will set the env vars for all bash terminals opened in thoes workspaces.
+    All future workspaces launched will set the env vars for all bash terminals opened in those workspaces.
 
     You can also set env vars in the .gitpod.yml but this can only contain non-senstive env vars.
 
@@ -134,6 +134,12 @@ gp env AWS_DEFAULT_REGION='us-****'
 - `terraform apply` will run a plan and pass the changeset to be execute by terraform. Apply should prompt yes or no.
 
 - If you want to automatically approve an apply you can provide the auto approve flag eg. `terraform apply --auto-approve`
+
+**Terraform Destroy**
+
+- `teraform destroy` will destroy resources.
+
+- You can also use the auto approve flag to skip the approve prompt eg. `terraform destroy --auto-approve`
 
 **Terraform Lock Files**
 
