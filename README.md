@@ -160,3 +160,33 @@ gp env AWS_DEFAULT_REGION='us-****'
 **Terraform Directory**
 
 - `.terraform` directory contains binaries of terraform providers, should not be committed to your VCS.
+
+## [Working with Terraform Cloud](https://www.terraform.io/)
+- You have to create an organization if using Terraform Cloud for the first time.
+- Create a new project.
+- Create a new workspace under the created project. choose CLI-Driven Workflow.
+
+## Issues with Terraform Cloud Login and Gitpod Workspace
+
+When attempting to run `terraform login` it will launch bash a wiswig view to generate a token. However it does not work expected in Gitpod VsCode in the browser.
+
+The workaround is manually generate a token in Terraform Cloud
+
+https://app.terraform.io/app/settings/tokens?source=terraform-login
+
+Then create open the file manually here:
+```bash
+touch /home/gitpod/.terraform.d/credentials.tfrc.json
+open /home/gitpod/.terraform.d/credentials.tfrc.json
+```
+
+Provide the following code (replace your token in the file):
+```json
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "YOUR-TERRAFORM-CLOUD-TOKEN"
+    }
+  }
+}
+```
