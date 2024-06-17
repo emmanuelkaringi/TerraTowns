@@ -200,3 +200,25 @@ Provide the following code (replace your token in the file):
 ## Set up Alias for Terraform
 The goal here is to shorten `terraform` to `tf` when running the `terraform` command in the terminal.
 - Created a bash script to set the Alias at `bin/set_tf_alias.sh`
+
+
+## Create S3 Bucket via AWS console & Set-up Static Website Hosting
+- Login to the AWS account and search for `S3`
+- Click on `Create bucket`
+- Tag the S3 bucket with `UserUuid` `value of the user ID`
+- Enable static website hosting under properties.
+- Push files in the bucket i.e Created an index file in `public` folder.
+
+    ```bash
+    aws s3 ls #List s3 buckets
+
+    #https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html
+    aws s3 cp public/index.html s3://bucketname/index.html #Copy a local file to S3
+    ```
+- Create a bucket policy under cloudfront.
+    1. Go to `origin access` under security >> create a control setting
+- Create a CloudFront distribution. Set `index.html` as the root file and attach the policy created earlier under `Origin access`
+- Update the S3 bucket policy >> Edit bucket policy, Paste the copied policy.
+- Use the link provided by cloudfront to access the website.
+
+**Remember to disable all created resources to avoid any charges.**
