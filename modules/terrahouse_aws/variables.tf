@@ -20,6 +20,7 @@ variable "bucket_name" {
   }
 }
 
+/*
 variable "index_html_filepath" {
   description = "The file path for index.html"
   type        = string
@@ -54,3 +55,4 @@ variable "assets_path" {
   description = "Path to assets folder"
   type = string
 }
+*/
