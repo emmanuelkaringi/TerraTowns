@@ -168,13 +168,13 @@ gp env AWS_DEFAULT_REGION='us-****'
 
 ## Issues with Terraform Cloud Login and Gitpod Workspace
 
-When attempting to run `terraform login` it will launch bash a wiswig view to generate a token. However it does not work expected in Gitpod VsCode in the browser.
+When attempting to run `terraform login` it will launch bash a wiswig view to generate a token. However it does not work as expected in Gitpod VsCode in the browser.
 
-The workaround is manually generate a token in Terraform Cloud
+The workaround is to manually generate a token in Terraform Cloud
 
 https://app.terraform.io/app/settings/tokens?source=terraform-login
 
-Then create open the file manually here:
+Then create and open the file manually here:
 ```bash
 touch /home/gitpod/.terraform.d/credentials.tfrc.json
 open /home/gitpod/.terraform.d/credentials.tfrc.json
@@ -470,3 +470,6 @@ For each allows us to enumerate over complex data types
 This is mostly useful when you are creating multiples of a cloud resource and you want to reduce the amount of repetitive terraform code.
 
 [For Each Expressions](https://developer.hashicorp.com/terraform/language/expressions/for)
+
+
+Random changes.
