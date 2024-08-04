@@ -5,13 +5,13 @@ terraform {
       version = "1.0.0"
     }
   }
-  # Migrating to cloud
-#   cloud {
-#     organization = "Vertives"
-#     workspaces {
-#       name = "terra-house-1"
-#     }
-#   }
+#  Migrating to cloud
+  cloud {
+    organization = "Vertives"
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
 }
 
 provider "terratowns" {
@@ -45,4 +45,26 @@ DESCRIPTION
   town = "gamers-grotto"
   content_version = 1
 }
+
+module "home_minions_hosting" {
+  source = "./modules/terrahouse_aws"
+  user_uuid = var.teacherseat_user_uuid
+  #user_uuid = var.user_uuid
+  bucket_name = var.bucket_name
+  index_html_filepath = var.index_html_filepath
+  error_html_filepath = var.error_html_filepath
+  content_version = var.content_version
+  assets_path = var.assets_path
+}
+
+# resource "terratowns_home" "home_minions" {
+#   name = "All about Minions"
+#   description = <<DESCRIPTION
+# Minions are small, yellow pill-shaped creatures which have existed since the beginning of time, evolving from single-celled organisms into beings which exist only to serve history's most evil masters, but they accidentally end up killing all their masters: rolling a Tyrannosaurus into a volcano, letting a caveman get mauled by a bear, crushing a Pharaoh and his subjects with a pyramid, and exposing Count Dracula to sunlight. They are driven into isolation after firing a cannon at Napoleon while in Russia and start a new life inside a cave, but after many years, the Minions become sad and unmotivated without a master to serve. This prompts three Minions; named Kevin, Stuart and Bob, to go out on a quest to find a new master for their brethren to follow.
+# DESCRIPTION
+#   #domain_name = module.terrahouse_aws.cloudfront_url
+#   domain_name = "3fdq3gz.cloudfront.net"
+#   town = "gamers-grotto"
+#   content_version = 1
+# }
 
