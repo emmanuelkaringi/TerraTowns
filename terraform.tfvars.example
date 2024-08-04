@@ -1,4 +1,4 @@
-user_uuid="e328f4ab-b99f-421c-84c9-4ccea042c7d1"
+teacherseat_user_uuid="e328f4ab-b99f-421c-84c9-4ccea042c7d1"
 bucket_name="terrahouse-example-240624"
 index_html_filepath="/workspace/TerraTowns/public/index.html"
 error_html_filepath="/workspace/TerraTowns/public/error.html"
